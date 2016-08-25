@@ -3,7 +3,7 @@ import re
 import csv
 
 def pre_deal():
-    csv_file = csv.reader(file("/Users/cheng/Workspace/python/kickstarter_stat/kickstarter_stat/project_new.csv", 'rb'))
+    csv_file = csv.reader(file("/home/www/git/airbnb_kick_crawler/kickstarter_stat/project_new.csv", 'rb'))
 
     dataset = []
     for line in csv_file:
@@ -17,7 +17,7 @@ def pre_deal():
 
     project_url_list = []
 
-    for l in dataset[7382:7500]:
+    for l in dataset[25876:]:
         project_url = '/'.join(l)
         project_name = re.sub(r'[?|!|"|/]', ' ', l[1])
         project_name = project_name.replace('&', 'and').replace('(Canceled)', '')\
